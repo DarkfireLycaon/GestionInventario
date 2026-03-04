@@ -1,5 +1,5 @@
-// src/environments/environment.prod.ts
+// src/environments/environment.ts
 export const environment = {
   production: true,
-  apiUrl: 'https://tu-backend-en-railway.app/auth' // Cambiaremos esto cuando tengamos el link
+  apiUrl: 'https://inventario-backend.onrender.com' // <-- AQUÍ PEGA TU URL DE RENDER
 };
