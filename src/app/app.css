@@ -1,0 +1,60 @@
+/* Colores de marca */
+:root {
+  --primary-purple: #a855f7;
+  --dark-surface: #1e1e1e;
+  --bg-black: #0f172a;
+}
+
+.navbar-custom {
+  background: rgba(15, 23, 42, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 1rem 0;
+}
+
+.text-primary-purple {
+  color: var(--primary-purple) !important;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #94a3b8 !important; /* Gris suave para items no activos */
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-purple) !important;
+  transform: translateY(-1px);
+}
+
+/* Efecto para el link activo */
+.nav-link.active {
+  color: white !important;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+/* Botón especial para Ventas para resaltar */
+.btn-vender {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid var(--primary-purple);
+  border-radius: 8px;
+  color: white !important;
+}
+
+.btn-vender:hover {
+  background: var(--primary-purple);
+  color: white !important;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* Animación de entrada para el menú */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: var(--dark-surface);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
