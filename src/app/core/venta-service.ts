@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 // venta.service.ts
 export class VentaService {
-  private urlEndPoint: string = `${environment.apiUrl}/inventario-app/ventas`;
+  private urlEndPoint: string = `${environment.apiUrl}/ventas`;
 private clienteHttp = inject(HttpClient);
 
   constructor(private http: HttpClient) { }

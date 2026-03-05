@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-private apiUrl = `${environment.apiUrl}/inventario-app/auth`;; 
+private apiUrl = `${environment.apiUrl}/auth`;; 
   constructor(private http: HttpClient) { }
 
   login(creds: any): Observable<any> {

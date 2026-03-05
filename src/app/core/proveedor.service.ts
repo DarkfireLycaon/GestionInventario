@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class ProveedorService {
-    private urlBase = `${environment.apiUrl}/inventario-app/proveedores`;
+    private urlBase = `${environment.apiUrl}/proveedores`;
      private clienteHttp = inject(HttpClient);
      obtenerProveedorLista(): Observable<Proveedor[]>{
       return this.clienteHttp.get<Proveedor[]>(this.urlBase);

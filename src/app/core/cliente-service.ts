@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class ClienteService {
- private urlBase = `${environment.apiUrl}/inventario-app/clientes`;
+ private urlBase = `${environment.apiUrl}/clientes`;
   private clienteHttp = inject(HttpClient);
 
     obtenerClienteLista(): Observable<Cliente[]>{
