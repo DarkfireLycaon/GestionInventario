@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Proveedor } from './proveedor/proveedor';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProveedorService {
-    private urlBase = "http://localhost:8080/inventario-app/proveedores";
+    private urlBase = `${environment.apiUrl}/inventario-app/proveedores`;
      private clienteHttp = inject(HttpClient);
      obtenerProveedorLista(): Observable<Proveedor[]>{
       return this.clienteHttp.get<Proveedor[]>(this.urlBase);
