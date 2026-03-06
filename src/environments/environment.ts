@@ -1,5 +1,5 @@
 // src/environments/environment.ts
 export const environment = {
   production: true,
-  apiUrl: 'https://gestioninventariospringboot.onrender.com' // <-- AQUÍ PEGA TU URL DE RENDER
+   apiUrl: process.env['API_URL'] || 'https://gestioninventariospringboot.onrender.com' // fallback // <-- AQUÍ PEGA TU URL DE RENDER
 };
