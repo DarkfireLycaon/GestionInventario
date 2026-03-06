@@ -11,7 +11,7 @@ private apiUrl = `${environment.apiUrl}/auth`;
   constructor(private http: HttpClient) { }
 
   login(creds: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/auth/login`, creds).pipe(
+    return this.http.post(`${this.apiUrl}/login`, creds).pipe(
       tap((res: any) => {
         // Guardamos el token que viene del backend
         localStorage.setItem('token', res.token);
@@ -19,11 +19,13 @@ private apiUrl = `${environment.apiUrl}/auth`;
     );
   }
 
-  getToken() {
+  getToken(): string | null {
     const token = localStorage.getItem('token');
-  
-  // Esto asegura que el token exista y no sea solo la palabra "null"
-  return token !== null && token !== 'null' && token !== undefined && token !== '';
+    // Si el token existe y no es "null" ni vacío, lo devuelve
+    if (token && token !== 'null' && token !== '') {
+      return token;
+    }
+    return null;
   }
 
   logout() {
@@ -35,18 +37,18 @@ private apiUrl = `${environment.apiUrl}/auth`;
   }
   // Añade este método a tu AuthService existente
 registrar(usuario: any): Observable<any> {
-  return this.http.post(`${this.apiUrl}/auth/registrar`, usuario);
+  return this.http.post(`${this.apiUrl}/registrar`, usuario);
 }
 
 
   enviarEnlaceRecuperacion(email: string): Observable<any> {
     // La sintaxis debe ser: return this.http.post(url, cuerpo);
-    return this.http.post(`${this.apiUrl}/auth/olvide-password`, { email });
+    return this.http.post(`${this.apiUrl}/olvide-password`, { email });
   }
 
   resetearPassword(token: string, nuevaPassword: string): Observable<any> {
     // Aquí usamos el DTO: token y nuevaPassword
-    return this.http.post(`${this.apiUrl}/auth/reset-password`, { 
+    return this.http.post(`${this.apiUrl}/reset-password`, { 
       token: token, 
       nuevaPassword: nuevaPassword 
     });
